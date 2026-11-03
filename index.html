@@ -2,26 +2,25 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Mengarahkan ke Form SD Plus Arafah...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Mandiri Ortu - SD Plus Arafah</title>
   <script>
-    // 1. Ambil URL Web App Resmi Apps Script (/exec)
+    // MASUKKAN URL WEB APP APPS SCRIPT RESMI PUBLIK BAPAK (/exec)
     const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw5vYNYhKJYIDCCUCzhupBJOS9PbiSjdRZBglOrFyqNF76zaVKBpFiko1jpyyrYE6OIfQ/exec";
 
-    // 2. Ambil parameter ID dari URL GitHub (contoh: sdplusarafah.github.io/form?id=270801033)
+    // Membaca Parameter 'id' dari URL (Contoh: https://sdplusarafah.github.io/kesiswaan/?id=270801033)
     const urlParams = new URLSearchParams(window.location.search);
     const idSiswa = urlParams.get('id');
 
     if (idSiswa) {
-      // Direct otomatis ke Apps Script dengan menyertakan parameter page & id
+      // Mengarahkan ke Apps Script dengan menyertakan parameter page & id
       window.location.href = `${GAS_WEBAPP_URL}?page=form_ortu&id=${encodeURIComponent(idSiswa)}`;
     } else {
-      document.write("Tautan tidak valid. ID Siswa tidak ditemukan.");
+      document.write("<h3 style='font-family:sans-serif; text-align:center; margin-top:50px;'>Tautan tidak valid. ID Siswa tidak ditemukan.</h3>");
     }
   </script>
 </head>
-<body>
-  <p style="font-family: sans-serif; text-align: center; margin-top: 50px;">
-    Mohon tunggu, sedang mengarahkan ke Formulir Data Siswa SD Plus Arafah...
-  </p>
+<body style="font-family: sans-serif; text-align: center; margin-top: 100px; color: #333;">
+  <p>Mohon tunggu, sedang mengarahkan ke Formulir Data Siswa SD Plus Arafah...</p>
 </body>
 </html>
