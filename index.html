@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- METATAG UNTUK PREVIEW CARD WHATSAPP (MENGGANTIKAN LOGO GITHUB) -->
   <title>Formulir Mandiri Ortu - SD Plus Arafah</title>
+  <meta property="og:title" content="Formulir Pendataan Mandiri Orang Tua SD Plus Arafah" />
+  <meta property="og:description" content="Silakan klik tautan ini untuk melengkapi data Buku Induk Siswa." />
+  <meta property="og:image" content="https://lh3.googleusercontent.com/u/0/d/1NR4ibZeMXdI1sQnCBrsSgK_qbdpSf0nj" />
+  
   <script>
-    // MASUKKAN URL WEB APP APPS SCRIPT RESMI PUBLIK BAPAK (/exec)
+    // URL WEB APP APPS SCRIPT RESMI PUBLIK BAPAK (/exec)
     const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw5vYNYhKJYIDCCUCzhupBJOS9PbiSjdRZBglOrFyqNF76zaVKBpFiko1jpyyrYE6OIfQ/exec";
-
     // Membaca Parameter 'id' dari URL (Contoh: https://sdplusarafah.github.io/kesiswaan/?id=270801033)
     const urlParams = new URLSearchParams(window.location.search);
     const idSiswa = urlParams.get('id');
 
     if (idSiswa) {
-      // Mengarahkan ke Apps Script dengan menyertakan parameter page & id
+      // Direct otomatis ke Apps Script dengan parameter page=form_ortu dan id
       window.location.href = `${GAS_WEBAPP_URL}?page=form_ortu&id=${encodeURIComponent(idSiswa)}`;
     } else {
       document.write("<h3 style='font-family:sans-serif; text-align:center; margin-top:50px;'>Tautan tidak valid. ID Siswa tidak ditemukan.</h3>");
